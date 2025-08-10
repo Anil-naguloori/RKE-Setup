@@ -1,5 +1,5 @@
-$Env:AWS_ACCESS_KEY_ID="AKIATDLFHQPFRLORGI47"
-$Env:AWS_SECRET_ACCESS_KEY="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"
+$Env:AWS_ACCESS_KEY_ID=" "
+$Env:AWS_SECRET_ACCESS_KEY=""
 
 1. Create a load aws network load balancer and TG.
 2. Create 3 machines and give the following in the userdata.
