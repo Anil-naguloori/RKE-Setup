@@ -1,0 +1,60 @@
+ssh_key_path: A:\K8S_PRACTICE\rke\Laptop.pem
+cluster_name: k8sb26cluster
+kubernetes_version: v1.32.6-rancher1-1
+nodes:
+  - address: 98.82.17.223
+    hostname_override: master01
+    #internal_address: 172.16.22.12
+    user: ubuntu
+    role: [controlplane, worker, etcd]
+  - address: 52.90.111.57
+    hostname_override: master02
+    #internal_address: 172.16.32.37
+    user: ubuntu
+    role: [controlplane, worker, etcd]
+  - address: 107.23.122.248
+    hostname_override: master03
+    #internal_address: 172.16.42.73
+    user: ubuntu
+    role: [controlplane, worker, etcd]
+  - address: 3.237.188.218
+    hostname_override: worker01
+    #internal_address: 172.16.42.73
+    user: ubuntu
+    role: [worker]
+  - address: 54.159.143.231
+    hostname_override: worker02
+    #internal_address: 172.16.42.73
+    user: ubuntu
+    role: [worker]
+  - address: 54.82.239.179
+    hostname_override: worker03
+    #internal_address: 172.16.42.73
+    user: ubuntu
+    role: [worker]
+
+authentication:
+    strategy: x509
+    sans:
+      - "rke.k8sanil.xyz"
+      - "rke-nlb-0b4f757ef9a2281e.elb.us-east-1.amazonaws.com"
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+network:
+  plugin: flannel
+  options:
+    flannel_iface: ens5
+    flannel_backend_type: vxlan
+    flannel_autoscaler_priority_class_name: system-cluster-critical # Available as of RKE v1.2.6+
+    flannel_priority_class_name: system-cluster-critical # Available as of RKE v1.2.6+
+    
+    
+    
+    
+    
+    
+    

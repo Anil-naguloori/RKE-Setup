@@ -1,0 +1,9 @@
+.terraform.lock.hcl
+.terraform/*
+.terraform/*
+# Ignore Terraform working directory
+.terraform/
+
+# Ignore state files
+*.tfstate
+*.tfstate.*
